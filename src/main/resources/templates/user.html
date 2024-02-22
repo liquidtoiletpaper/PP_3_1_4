@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>User information</title>
+</head>
+<body>
+
+<table border="1px" >
+    <thead>
+    <tr>
+        <th scope="col">Name</th>
+        <th scope="col">LastName</th>
+        <th scope="col">Role</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:object="${user}">
+        <td><h1 th:text="${user.getUsername()} "></h1></td>
+        <td><h1 th:text="${user.getLastName()}"></h1></td>
+        <td><h1 th:text="${user.getFirstName()}"></h1></td>
+    </tr>
+    </tbody>
+</table>
+
+<input align="right" type = "button" value = "Logout"
+       onclick = "window.location.href = '/logout'"/>
+
+</body>
+</html>
